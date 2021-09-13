@@ -1,0 +1,402 @@
+@import url("https://fonts.google.com/specimen/Alata");
+@import url("https://fonts.google.com/specimen/Josefin+Sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.underline:hover {
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid white;
+  //text-decoration: underline;
+}
+
+.btn {
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em;
+  width: 20%;
+  background: transparent;
+  margin-bottom: 2em;
+  letter-spacing: 8px;
+  font-weight: 700;
+}
+.btn:hover {
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.nav-main-title {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid;
+  padding: 0.5em;
+  line-height: 0.95em;
+  font-size: 2.5rem;
+  margin: 0 auto;
+  color: white;
+}
+
+.nav-list {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: "Alata", sans-serif;
+  font-size: 2rem;
+  position: fixed;
+  padding: 1.5em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  line-height: 1.6em;
+  background-color: black;
+  transform: translateX(100%);
+  &.open {
+    transform: translateX(0%);
+  }
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: white;
+}
+
+.img {
+  width: 100%;
+
+  &.hero.mobile.active {
+    visibility: hidden;
+  }
+
+  &.desktop {
+    display: none;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+.nav-toggle {
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: transparent;
+  .nav-open {
+    &.ham-open {
+      display: none;
+    }
+    &.ham-close {
+      z-index: 1000;
+      position: fixed;
+      right: 1em;
+      top: 1em;
+      display: initial;
+    }
+  }
+  .ham-close {
+    display: none;
+  }
+  .ham-open {
+  }
+}
+
+.container-flex {
+  margin-top: 6em;
+  text-align: center;
+  padding: 2.5em;
+  margin-bottom: 4em;
+
+  &-title {
+    padding: 0.75em;
+    font-size: 1.8rem;
+  }
+
+  &-p {
+    padding: 1em 1.35em;
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+}
+
+.our-creations {
+  padding-left: 1.5em;
+
+  .btn {
+    display: none;
+  }
+}
+
+.container-grid {
+  display: grid;
+  padding: 1.5em;
+  grid-template-rows: 1fr;
+  gap: 2em 0;
+  color: white;
+  &-item {
+    cursor: pointer;
+  }
+  &-item:hover {
+    opacity: 0.9;
+    color: black;
+  }
+
+  &-txt {
+    position: absolute;
+    transform: translateY(-125%);
+    padding-right: 1em;
+  }
+
+  .btn {
+    grid-row: 10;
+    padding: 1em;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  max-width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "list"
+    "social";
+  &-logo {
+    grid-area: logo;
+  }
+  &-social {
+    grid-area: social;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+    .footer-item {
+      margin: 0 0.25em;
+    }
+  }
+  &-list {
+    margin-bottom: 0.75em;
+    grid-area: list;
+    font-weight: 700;
+  }
+  &-item {
+    line-height: 2em;
+    font-size: 1.5rem;
+  }
+  &-copyright {
+    color: hsl(0, 0%, 55%);
+    font-weight: 700;
+    margin: 2em 0;
+  }
+}
+
+/*MEDIA QUERY*/
+@media screen and(min-width:800px) {
+  .container {
+    margin: 0 auto;
+    max-width: 900px;
+    &-flex {
+      display: flex;
+      flex-direction: column;
+      //width: 100%;
+      padding: unset;
+
+      .flex-item {
+        &.one {
+        }
+        &.two {
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  img {
+    &.hero {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+    }
+
+    &.desktop {
+      display: block !important;
+    }
+  }
+
+  .nav-main-title {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    padding: 0.5em;
+    line-height: 0.95em;
+    font-size: 2.5rem;
+    margin: 0 auto;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+    text-transform: none;
+    font-weight: 300;
+    font-family: "Alata", sans-serif;
+    font-size: 1rem;
+    top: 0.15em;
+    bottom: unset;
+    z-index: unset;
+    right: 1em;
+    padding: 1.5em;
+    width: 50%;
+    line-height: 1.6em;
+    background-color: transparent;
+    position: absolute;
+
+    &.close {
+      visibility: visible;
+    }
+  }
+  /*OUR CREATIONS*/
+  .our-creations {
+    //padding-left: 1.5em;
+    width: 95%;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-between;
+    &-txt {
+      font-size: 1.8rem;
+    }
+    .btn {
+      display: initial;
+    }
+    .btn:hover {
+      background-color: black;
+      border: none;
+      color: white;
+    }
+  }
+
+  .container-grid {
+    display: grid;
+    padding: 1.5em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 2em 2em;
+
+    &-txt {
+      transform: translateY(-125%);
+      padding-right: 0.75em;
+      width: 15%;
+    }
+
+    .btn {
+      display: none;
+    }
+  }
+
+  /* FOOTER */
+
+  .footer {
+    max-width: 100%;
+    grid-template-areas:
+      "logo social"
+      "list copyright";
+    padding: 1.5em;
+    align-items: center;
+    &-logo {
+      grid-area: logo;
+      padding-right: 18em;
+    }
+    &-social {
+      grid-area: social;
+      max-width: unset;
+      margin-right: 3em;
+      .footer-item {
+        padding-right: unset;
+      }
+    }
+    &-list {
+      grid-area: list;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 75%;
+      margin-left: 3em;
+    }
+    &-item {
+      line-height: unset;
+      font-size: 0.95rem;
+    }
+    &-copyright {
+      color: hsl(0, 0%, 55%);
+      font-weight: 700;
+      grid-area: copyright;
+    }
+    .attribution {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.attribution {
+  //display: flex;
+
+  text-align: center;
+  color: hsl(0, 0%, 55%);
+  padding-bottom: 0.5em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
